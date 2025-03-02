@@ -42,7 +42,7 @@ const Dashboard = ({ user, taskData, setTaskData }) => {
           await setDoc(docRef, { tasks: initialTasks });
           setTaskData(initialTasks);
         }
-        setIsLoading(false); // Data fetching is complete
+        setIsLoading(false);
       };
       fetchTaskData();
     }
