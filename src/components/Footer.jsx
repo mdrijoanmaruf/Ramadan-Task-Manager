@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-green-700">Md Rijoan Maruf</h3>
             <p className="text-sm font-[500]">
-              Personal website for notes & projects sharing.
+              A Task Manager website for Ramadan Amal.
             </p>
             <p className="text-sm font-[500]">
               © 2024 Md Rijoan Maruf. All rights reserved.
