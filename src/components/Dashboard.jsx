@@ -23,10 +23,10 @@ const Dashboard = ({ user, taskData, setTaskData }) => {
             "সাহরী করেছি",
             "৫ ওয়াক্ত সালাত আদায় করেছি",
             "সকাল সন্ধ্যায় জিকির করেছি",
-            "কমপক্ষে ৩ সূরা কুরআন তেলাওয়াত করেছi",
+            "কমপক্ষে ৩ সূরা কুরআন তেলাওয়াত করেছি",
             "কমপক্ষে ১০০ বার দুরূদ পড়েছি",
             "কমপক্ষে ১০০ বার ইস্তেগফার পড়েছি",
-            "ফরজ সালাত শেষে দোয়া ও জিকির করেছি",
+            "ফরজ সালাত শেষে দোয়া ও জিকির করেছi",
             "চোখের হিফাজত করার চেষ্টা করেছি",
             "প্রোডাক্টিভ ৩টি কাজ করেছি",
             "সুন্নাহ অনুসরণ করে ইফতার করেছি",
@@ -65,7 +65,7 @@ const Dashboard = ({ user, taskData, setTaskData }) => {
 
   // Skeleton Loading Component
   const SkeletonLoading = () => (
-    <div className="mt-8 max-w-7xl mx-auto px-4">
+    <div className="mt-8 mx-4">
       {/* Header Skeleton */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-8 space-y-4 md:space-y-0">
         <div className="h-8 w-48 bg-gray-200 rounded animate-pulse"></div>
@@ -78,7 +78,7 @@ const Dashboard = ({ user, taskData, setTaskData }) => {
           <table className="w-full">
             <thead className="bg-gray-50">
               <tr>
-                <th className="sticky left-0 z-10 bg-gray-50 px-6 py-4 text-left text-sm font-semibold text-gray-700 min-w-[300px]">
+                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700 min-w-[300px]">
                   <div className="h-6 w-48 bg-gray-200 rounded animate-pulse"></div>
                 </th>
                 {Array.from({ length: 30 }, (_, i) => (
@@ -94,7 +94,7 @@ const Dashboard = ({ user, taskData, setTaskData }) => {
             <tbody className="divide-y divide-gray-200">
               {Array.from({ length: 16 }, (_, i) => (
                 <tr key={i} className="hover:bg-gray-50 transition-colors">
-                  <td className="sticky left-0 z-10 bg-white px-6 py-4 text-sm font-medium text-gray-900 min-w-[300px]">
+                  <td className="px-6 py-4 text-sm font-medium text-gray-900 min-w-[300px]">
                     <div className="h-6 w-64 bg-gray-200 rounded animate-pulse"></div>
                   </td>
                   {Array.from({ length: 30 }, (_, j) => (
@@ -115,14 +115,14 @@ const Dashboard = ({ user, taskData, setTaskData }) => {
   );
 
   return (
-    <>
+    <div className="max-w-7xl mx-auto pb-10">
       {isLoading ? ( // Show skeleton loading while data is being fetched
         <SkeletonLoading />
       ) : (
-        <div className="mt-8 max-w-7xl mx-auto px-4">
+        <div className="mt-8 mx-4">
           {/* Header Section */}
           <div className="flex flex-col md:flex-row justify-between items-center mb-8 space-y-4 md:space-y-0">
-            <h1 className="text-2xl font-bold text-gray-800">Ramadan Tracker</h1>
+            <h1 className="text-2xl font-bold text-gray-700">Ramadan Tracker</h1>
             <button
               onClick={() => (user ? setShowTaskPopup(true) : setShowLoginPopup(true))}
               className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg shadow-md transition-all flex items-center"
@@ -180,12 +180,15 @@ const Dashboard = ({ user, taskData, setTaskData }) => {
           )}
 
           {/* Dashboard Table */}
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden ">
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead className="bg-gray-50">
                   <tr>
-                    <th className="sticky left-0 z-10 bg-gray-50 px-6 py-4 text-left text-sm font-semibold text-gray-700 min-w-[300px]">
+                    <th
+                      className={`px-6 py-4 text-left text-sm font-semibold text-gray-700 min-w-[300px]
+                                  md:sticky md:left-0 md:z-10 md:bg-gray-50`}
+                    >
                       Daily Tasks
                     </th>
                     {Array.from({ length: 30 }, (_, i) => (
@@ -204,7 +207,10 @@ const Dashboard = ({ user, taskData, setTaskData }) => {
                       key={taskIndex}
                       className="hover:bg-gray-50 transition-colors"
                     >
-                      <td className="sticky left-0 z-10 bg-white px-6 py-4 text-sm font-medium text-gray-900 min-w-[300px]">
+                      <td
+                        className={`px-6 py-4 text-sm font-medium text-gray-900 min-w-[300px]
+                                   md:sticky md:left-0 md:z-10 md:bg-white`}
+                      >
                         {task.name}
                       </td>
                       {task.days.map((completed, dayIndex) => (
@@ -244,7 +250,7 @@ const Dashboard = ({ user, taskData, setTaskData }) => {
           )}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

@@ -35,20 +35,20 @@ const Navbar = ({ user }) => {
     <>
       <div className="bg-gray-50">
         <nav className="max-w-7xl mx-auto p-4 text-gray-700 flex justify-between items-center">
-          <div className="text-xl font-bold">Ramadan Task Manager</div>
+          <div className="text-xl font-bold text-blue-600">Ramadan Task</div>
           <div className="flex items-center space-x-4">
             {user ? (
               <div className="relative">
                 <button
                   onClick={() => setShowProfileDropdown(!showProfileDropdown)}
                   className="flex items-center space-x-2 focus:outline-none"
-                >
+                  >
+                  <span className='font-semibold text-[19px] hover:text-green-600' >{user.displayName || "User"}</span>
                   <img
                     src={user.photoURL || "https://via.placeholder.com/40"}
                     alt="Profile"
                     className="w-8 h-8 rounded-full"
                   />
-                  <span>{user.displayName || "User"}</span>
                 </button>
                 {showProfileDropdown && (
                   <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg">

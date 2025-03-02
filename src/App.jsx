@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { auth } from "./firebase";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
+import Footer from "./components/footer";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -14,9 +15,10 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className="">
       <Navbar user={user} />
       <Home user={user} />
+      <Footer />
     </div>
   );
 };
