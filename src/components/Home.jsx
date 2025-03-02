@@ -111,10 +111,10 @@ const Home = () => {
   };
 
   return (
-    <div className="p-4 bg-gradient-to-br from-blue-50 to-green-50 min-h-screen">
+    <div className="bg-gradient-to-br from-blue-50 to-green-50 min-h-screen">
       {/* Header Section */}
       <div className="text-center mb-8">
-        <h1 className="text-[27px] mt-2 font-bold text-green-700">Ramadan Task Manager</h1>
+        <h1 className="text-[27px] pt-6 font-bold text-green-700">Ramadan Task Manager</h1>
         <p className="text-xl font-semibold text-gray-500 ">
           Hijri Date: {` ${getEnglishDate() - 1} Ramadan, 1446 AH `}
         </p>
