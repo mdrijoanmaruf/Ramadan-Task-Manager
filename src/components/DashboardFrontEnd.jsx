@@ -45,7 +45,7 @@ const DashboardFrontEnd = () => {
           <table className="w-full">
             <thead className="bg-gray-50">
               <tr>
-                <th className="sticky left-0 z-10 bg-gray-50 px-6 py-4 text-left text-sm font-semibold text-gray-700 min-w-[300px]">
+                <th className="md:sticky left-0 z-10 bg-gray-50 px-6 py-4 text-left text-sm font-semibold text-gray-700 min-w-[300px]">
                   Daily Tasks
                 </th>
                 {Array.from({ length: 30 }, (_, i) => (
@@ -61,7 +61,7 @@ const DashboardFrontEnd = () => {
             <tbody className="divide-y divide-gray-200">
               {tasks.map((task, taskIndex) => (
                 <tr key={taskIndex} className="hover:bg-gray-50 transition-colors">
-                  <td className="sticky left-0 z-10 bg-white px-6 py-4 text-sm font-medium text-gray-900 min-w-[300px]">
+                  <td className="md:sticky left-0 z-10 bg-white px-6 py-4 text-sm font-medium text-gray-900 min-w-[300px]">
                     {task}
                   </td>
                   {Array.from({ length: 30 }, (_, dayIndex) => (
